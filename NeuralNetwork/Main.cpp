@@ -395,15 +395,16 @@ public:
 				
 
 			}
-			if(networkDisplay)
+			if (networkDisplay)
 				networkDisplay->displayNetwork();
 
-			if (i%1000 == 0)
+			if (i%100== 0)
 			{
 				float deltatime = (GetTickCount() - prevtime);
-				iterationspersecond = (1000.0f / deltatime) * 1000 ;
+				iterationspersecond = (1000.0f / deltatime) * 100 ;
 				prevtime = GetTickCount();
 				cout << "\r Iteration: " << i << " IPS: " << iterationspersecond << " Error Rate: " << errors / (float)trainingSetInputs.rows();
+				
 			}
 			
 
@@ -545,7 +546,7 @@ int main()
 	cout << "Beginning Training: " << endl << endl;
 	//for (int i = 0; i < 100000; i++)
 	//{
-	neural_network.train(trainingSetInputs, trainingSetOutputs, 25000);
+	neural_network.train(trainingSetInputs, trainingSetOutputs, 15000);
 	//}
 	
 	cout << endl;
